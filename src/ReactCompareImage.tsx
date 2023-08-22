@@ -59,6 +59,11 @@ const ReactCompareImage: React.FC<IProps> = (props: IProps) => {
   const rightImageRef = useRef(null);
   const leftImageRef = useRef(null);
 
+  // control the slider position from outside
+  useEffect(() => {
+    setSliderPosition(sliderPositionPercentage);
+  }, [sliderPositionPercentage])
+
   // make the component responsive
   useEffect(() => {
     const containerElement = containerRef.current;
